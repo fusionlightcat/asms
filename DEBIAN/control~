@@ -1,0 +1,10 @@
+Package: asms-core
+Version: 0.0.1-0
+Section: misc
+Priority: extra
+Architecture: all
+Depends: screen, bash, sh, apache2
+Installed-Size: 8
+Maintainer: Thomas Geymayer <tomgey@gmail.com>
+Homepage: github.com/fusionlightcat/asms/
+Description: ASMS-Messager samt ASMS-Server (CORE-Channel)
