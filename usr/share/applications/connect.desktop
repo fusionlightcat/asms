@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=ASMS Connect
+Name[­de­]=ASMS Verbindung
+Comment=ASMS Create Connection...
+Comment[­de­]=ASMS Verbindung herstellen...
+Exec=/usr/share/asms/run.sh
+Icon=tp_deb_helloworld
+Terminal=false
+Type=Application
+Categories=Internet;
+StartupNotify=false
