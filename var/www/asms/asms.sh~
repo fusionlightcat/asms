@@ -11,8 +11,11 @@ touch ./run.pid
 while [ -e ./run.pid ]
 do
 host=$(cat ./host.db)
+date=$(date +%F)
+time=$(date +%R)
 wget $host/asms/message.sh
 sh ./message.sh
+mv ./message.sh ./archive/message-$date-$time.sh
 
 done
 notify-send "ASMS: Client beendet"
