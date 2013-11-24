@@ -1,4 +1,7 @@
 #/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 notify-send "Starte ASMS..."
 if [ -e ./server.pid ]
 then
@@ -37,3 +40,4 @@ zenity --error \
 --text="Bitte starten sie zuerst die ASMS-Verbindung. Dann Client neu starten!"
 exit
 fi
+

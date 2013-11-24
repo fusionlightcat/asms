@@ -1,36 +1,24 @@
 #/bin/bash
-notify-send "Starte ASMS..."
-if [ -e ./server.pid ]
-then
-echo "aktiv"
-notify-send "Verbindung aktiv. Teste Server..."
-if [ -e ./name.pid ]
-then
-echo "anem da"
-name=$(cat ./name.pid)
-notify-send "ASMS verbunden mit '$name'"
-touch ./run.pid
-echo "schlaife läuft"
-while [ -e ./run.pid ]
-do
-echo "schleife"
-sleep 15
-host=$(cat ./host.db)
-wget $host/asms/bit
-bit=$(cat ./bit)
-echo $bit
-diff -q ./bit ./lastbit
 
-if [ $? -ne 0 ]
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+notify-send "Starte ASMS..."
+if [ -e $DIR/server.pid ]
 then
-echo "bit und las ist untersch."
+notify-send "Verbindung aktiv. Teste Server..."
+if [ -e $DIR/name.pid ]
+then
+name=$(cat $DIR/name.pid)
+notify-send "ASMS verbunden mit '$name'"
+touch $DIR/run.pid
+while [ -e $DIR/run.pid ]
+do
+host=$(cat $DIR/host.db)
+date=$(date +%F)
+time=$(date +%R)
 wget $host/asms/message.sh
-sh ./message.sh
-mv ./bit ./lastbit
-rm ./message.sh
-else
-echo "IST  NICHT!"
-fi
+sh $DIR/message.sh
+mv $DIR/message.sh $DIR/archive/message-$date-$time.sh
 
 done
 notify-send "ASMS: Client beendet"
@@ -52,3 +40,4 @@ zenity --error \
 --text="Bitte starten sie zuerst die ASMS-Verbindung. Dann Client neu starten!"
 exit
 fi
+
