@@ -3,16 +3,16 @@
   section="Applications/Internet"\
   title="ASMS Connection"\
   icon="/usr/share/pixmaps/asms.png"\
-  command="/usr/share/asms/run.sh"
+  command="/usr/share/run.sh"
 ?package(asms-core):\
   needs="X11"\
   section="Applications/Internet"\
   title="ASMS Client"\
   icon="/usr/share/pixmaps/asms.png"\
-  command="/usr/share/asms/asms.sh"
+  command="screen /usr/share/asms.sh"
 ?package(asms-core):\
   needs="X11"\
   section="Applications/Internet"\
   title="ASMS Stop Connection"\
   icon="/usr/share/pixmaps/asms.png"\
-  command="/usr/share/asms/stop.sh"
+  command="/usr/share/stop.sh"
