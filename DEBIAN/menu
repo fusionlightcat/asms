@@ -1,0 +1,4 @@
+?package(asms-core):needs=X11|wm section=Help\
+  title="ASMS Verbindung" \
+  command="/usr/share/asms/run.sh"
+  icon="/usr/share/pixmaps/asms.png"
