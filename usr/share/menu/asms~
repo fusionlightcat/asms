@@ -1,6 +1,0 @@
-?package(asms-core):\
-  needs="X11"\
-  section="Applications/Internet"\
-  title="ASMS Connection"\
-  icon="/usr/share/pixmaps/asms.png"\
-  command="/usr/share/run.sh"
